@@ -12,7 +12,7 @@ class MoviePage extends ConsumerWidget {
       appBar: AppBar(),
       body: movie.when(
           data: (movie) => Center(
-                child: Text(movie.id),
+                child: Text(movie.title),
               ),
           error: (e, s) => throw (e),
           loading: () => const Center(

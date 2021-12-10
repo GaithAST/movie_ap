@@ -17,7 +17,6 @@ class MovieRepository {
           'https://api.themoviedb.org/3/movie/$id?api_key=a863e7e8d16656b0365ee6d93cff8307');
       final result = Map<String, dynamic>.from(response.data);
       final movie = Movie.fromMap(result);
-      print(movie.toJson());
       return movie;
     } on DioError {
       rethrow;

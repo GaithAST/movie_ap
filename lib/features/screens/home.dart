@@ -41,22 +41,20 @@ class Moviebox extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialButton(
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         ref.read(movieIdProvider.state).state = movie.id;
-        print('clicked!');
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => MoviePage(),
+              builder: (context) => const MoviePage(),
             ));
-        print(ref.watch(movieIdProvider.state).state);
       },
       child: Stack(
         children: [
           Image.network(movie.fullImageUrl),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0, 200, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 210, 0, 0),
             child: Stack(
               children: [
                 Container(

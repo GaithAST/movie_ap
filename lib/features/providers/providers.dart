@@ -10,7 +10,7 @@ Dio _dio = Dio();
 
 final movieRepositoryProvider = Provider<MovieRepository>((ref) {
   final config = ref.read(environmentConfigProvider);
-  final movieId = ref.read(movieIdProvider);
+  final movieId = ref.watch(movieIdProvider);
   return MovieRepository(id: movieId, dio: _dio, config: config);
 });
 
