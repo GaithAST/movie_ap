@@ -9,10 +9,9 @@ class MoviePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final movie = ref.watch(futureMovieProvider);
     return Scaffold(
-      appBar: AppBar(),
       body: movie.when(
           data: (movie) => Center(
-                child: Text(movie.title),
+                child: Text(movie.toJson()),
               ),
           error: (e, s) => throw (e),
           loading: () => const Center(

@@ -58,7 +58,7 @@ class Moviebox extends ConsumerWidget {
             child: Stack(
               children: [
                 Container(
-                  child: const SizedBox(height: 60, width: 200),
+                  child: const SizedBox(height: 60, width: 150),
                   color: Colors.grey,
                 ),
                 Center(child: Text(movie.title)),
